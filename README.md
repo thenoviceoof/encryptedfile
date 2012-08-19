@@ -1,4 +1,4 @@
-encrypt-file
+encryptedfile
 ================================================================================
 
 Write OpenPGP compatible-encrypted files like it ain't no thang.
@@ -9,7 +9,7 @@ Usage
 
 Use it by itself:
 
-    from encrypt-file import EncryptedFile
+    from encryptedfile import EncryptedFile
     f = EncryptedFile("hello.gpg", pass_phrase=getpass.getpass(),
                       encryption_algo=EncryptedFile.ALGO_AES256)
     f.write("super secret message")
@@ -17,6 +17,7 @@ Use it by itself:
 
 Or with something passed through it:
 
+    from encryptedfile import EncryptedFile
     import PIL
     img = ... # obtain image somehow
     f = EncryptedFile("pic.png.gpg", pass_phrase=getpass.getpass(),
