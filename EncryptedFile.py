@@ -196,6 +196,7 @@ class EncryptedFile(object):
             self._raw_buffer += chr(timestamp & 0xff)
         else:
             self._raw_buffer += '\0' * 4
+        self.count = 0
 
     # handle {with EncryptedFile(...) as f:} notation
     def __enter__(self):
@@ -276,6 +277,7 @@ class EncryptedFile(object):
 
     def write(self, data):
         # make sure the data is there
+        self.count += len(data)
         self._raw_buffer += data
         if not self.bin_mode:
             self._raw_buffer = re.sub('([^\r])\n', '\\1\r\n', self._raw_buffer)
@@ -303,8 +305,9 @@ class EncryptedFile(object):
     # so is seeking
     def seek(self, offset, whence=None):
         raise NotImplementedError()
+
     def tell(self):
-        raise NotImplementedError()
+        return self.count
 
     def close(self):
         if self.file.closed:
