@@ -54,7 +54,7 @@ class EncryptedFile(object):
         }
 
     def __init__(self, file_obj, pass_phrase, mode='w', iv=None, salt=None,
-                 block_size=8, buffer_size=1024, timestamp=None,
+                 block_size=16, buffer_size=1024, timestamp=None,
                  encryption_algo=ALGO_AES256, hash_algo=HASH_SHA256,
                  key_method=S2K_ITERATED, iterated_count=(16, 6)):
         '''
