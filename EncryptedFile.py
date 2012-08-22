@@ -197,6 +197,12 @@ class EncryptedFile(object):
         else:
             self._raw_buffer += '\0' * 4
 
+    # handle {with EncryptedFile(...) as f:} notation
+    def __enter__(self):
+        return self
+    def __exit__(self, type, value, traceback):
+        self.close()
+
     def _semi_length(self):
         '''
         Produce the byte encoding an intermediate block of data
@@ -301,6 +307,8 @@ class EncryptedFile(object):
         raise NotImplementedError()
 
     def close(self):
+        if self.file.closed:
+            return
         # make sure we catch a final \r, which was waiting for the next write
         if not self.bin_mode and self._raw_buffer[-1] == '\r':
             self._raw_buffer += '\n'
