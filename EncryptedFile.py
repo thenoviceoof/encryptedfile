@@ -53,7 +53,7 @@ class EncryptedFile(object):
         HASH_SHA512: hashlib.sha512,
         }
 
-    def __init__(self, file_obj, pass_phrase, mode='w', iv=None, salt=None,
+    def __init__(self, file_obj, passphrase, mode='w', iv=None, salt=None,
                  block_size=16, buffer_size=1024, timestamp=None,
                  encryption_algo=ALGO_AES256, hash_algo=HASH_SHA256,
                  key_method=S2K_ITERATED, iterated_count=(16, 6)):
@@ -64,7 +64,7 @@ class EncryptedFile(object):
             a string should be a path
             file object: write through to the file
 
-        pass_phrase: passphrase
+        passphrase: passphrase
         mode: usual file modes
 
         iv: initialization vector, randomly generated if not
@@ -173,7 +173,7 @@ class EncryptedFile(object):
         self.key = ''
         i = 0
         while len(self.key) < self.KEY_SIZES[encryption_algo]:
-            self.key += gen_key(key_method, hash_algo, pass_phrase, salt, i)
+            self.key += gen_key(key_method, hash_algo, passphrase, salt, i)
             i += 1
         self.key = self.key[:self.KEY_SIZES[encryption_algo]]
 
@@ -337,6 +337,6 @@ if __name__=='__main__':
     msg = '''Hello world'''
     print("Encrypted message:")
     print(msg)
-    b = EncryptedFile('example.gpg', pass_phrase='w')
+    b = EncryptedFile('example.gpg', passphrase='w')
     b.write(msg)
     b.close()
