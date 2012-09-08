@@ -4,6 +4,8 @@
 # * this stuff is worth it, you can buy me a beer in return
 ################################################################################
 
+from . import __version__
+
 import hashlib
 from Crypto.Cipher import Blowfish, AES
 from os import urandom
