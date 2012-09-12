@@ -10,7 +10,7 @@ Usage
 Use it by itself:
 
     from encryptedfile import EncryptedFile
-    f = EncryptedFile("hello.gpg", pass_phrase=getpass.getpass(),
+    f = EncryptedFile("hello.gpg", passphrase=getpass.getpass(),
                       encryption_algo=EncryptedFile.ALGO_AES256)
     f.write("super secret message")
     f.close()
@@ -20,14 +20,14 @@ Or with something passed through it:
     from encryptedfile import EncryptedFile
     import PIL
     img = ... # obtain image somehow
-    f = EncryptedFile("pic.png.gpg", pass_phrase=getpass.getpass(),
+    f = EncryptedFile("pic.png.gpg", passphrase=getpass.getpass(),
                       encryption_algo=EncryptedFile.ALGO_BLOWFISH)
     img.save(f, "png")
 
 Or use it in a PEP-343 block:
 
     from encryptedfile import EncryptedFile
-    with EncryptedFile("txt.gpg", pass_phrase=getpass.getpass()) as f:
+    with EncryptedFile("txt.gpg", passphrase=getpass.getpass()) as f:
          ... use f ...
 
 
