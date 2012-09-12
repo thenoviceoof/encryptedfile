@@ -24,7 +24,7 @@ Or with something passed through it:
                       encryption_algo=EncryptedFile.ALGO_BLOWFISH)
     img.save(f, "png")
 
-Or use it in a PEP-343 block:
+Or use it in a [PEP-343](http://www.python.org/dev/peps/pep-0343/) block:
 
     from encryptedfile import EncryptedFile
     with EncryptedFile("txt.gpg", passphrase=getpass.getpass()) as f:
