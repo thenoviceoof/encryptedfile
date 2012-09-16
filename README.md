@@ -9,7 +9,7 @@ Usage
 
 Use it by itself:
 
-    from encryptedfile import EncryptedFile
+    from encryptedfile.EncryptedFile import EncryptedFile
     f = EncryptedFile("hello.gpg", passphrase=getpass.getpass(),
                       encryption_algo=EncryptedFile.ALGO_AES256)
     f.write("super secret message")
@@ -17,7 +17,7 @@ Use it by itself:
 
 Or with something passed through it:
 
-    from encryptedfile import EncryptedFile
+    from encryptedfile.EncryptedFile import EncryptedFile
     import PIL
     img = ... # obtain image somehow
     f = EncryptedFile("pic.png.gpg", passphrase=getpass.getpass(),
@@ -45,7 +45,16 @@ FAQ
  - Do you support reading?
 
    No, reading would mean supporting the bajillion ways that OpenPGP
-   files have been created throughout history.
+   files have been created throughout history. That would be a pain.
+   I may at some point in time support reading well enough to be able
+   to read whatever written by this module.
+
+
+Todo
+--------------------------------------------------------------------------------
+ - change `import encryptedfile.EncryptedFile.EncryptedFile` to
+   `import encryptedfile.EncryptedFile`, probably when we bump the major
+   version number
 
 
 License
