@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
     name='encryptedfile',
-    version='1.0.0',
+    version='1.0.1',
     author='thenoviceoof',
     author_email='thenoviceoof@gmail.com',
     packages=['encryptedfile'],
