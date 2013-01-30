@@ -9,9 +9,7 @@ Symmetric ciphers only.
 Usage
 -----
 
-Use it by itself:
-
-::
+Use it by itself::
 
     from encryptedfile.EncryptedFile import EncryptedFile
     f = EncryptedFile("hello.gpg", passphrase=getpass.getpass(),
@@ -19,9 +17,7 @@ Use it by itself:
     f.write("super secret message")
     f.close()
 
-Or with something passed through it:
-
-::
+Or with something passed through it::
 
     from encryptedfile.EncryptedFile import EncryptedFile
     import PIL
@@ -31,9 +27,7 @@ Or with something passed through it:
     img.save(f, "png")
 
 Or use it in a `PEP-343 <http://www.python.org/dev/peps/pep-0343/>`_
-block:
-
-::
+block::
 
     from encryptedfile import EncryptedFile
     with EncryptedFile("txt.gpg", passphrase=getpass.getpass()) as f:
@@ -43,9 +37,7 @@ block:
 Decrypt
 -------
 
-Let's say we're using gpg:
-
-::
+Let's say we're using gpg::
 
     gpg filename
 
