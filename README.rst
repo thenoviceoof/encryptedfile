@@ -54,14 +54,6 @@ have been created throughout history. That would be a pain. I may at
 some point in time support reading well enough to be able to read
 whatever written by this module.
 
-----
-Todo
-----
-
--  change ``import encryptedfile.EncryptedFile.EncryptedFile`` to
-   ``import encryptedfile.EncryptedFile``, probably when we bump the
-   major version number
-
 -------
 License
 -------

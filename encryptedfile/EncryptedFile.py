@@ -4,7 +4,7 @@
 # * this stuff is worth it, you can buy me a beer in return
 ################################################################################
 
-from . import __version__
+__version__ = (1, 1, 0)
 
 import hashlib
 from Crypto.Cipher import Blowfish, AES

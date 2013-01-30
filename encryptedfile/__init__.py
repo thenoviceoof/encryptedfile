@@ -4,4 +4,4 @@
 # * this stuff is worth it, you can buy me a beer in return
 ################################################################################
 
-__version__ = (1, 0, 1)
+from EncryptedFile import __version__, EncryptedFile
