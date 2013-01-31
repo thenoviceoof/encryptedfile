@@ -11,7 +11,7 @@ Usage
 
 Use it by itself::
 
-    from encryptedfile.EncryptedFile import EncryptedFile
+    from encryptedfile import EncryptedFile
     f = EncryptedFile("hello.gpg", passphrase=getpass.getpass(),
                       encryption_algo=EncryptedFile.ALGO_AES256)
     f.write("super secret message")
@@ -19,7 +19,7 @@ Use it by itself::
 
 Or with something passed through it::
 
-    from encryptedfile.EncryptedFile import EncryptedFile
+    from encryptedfile import EncryptedFile
     import PIL
     img = ... # obtain image somehow
     f = EncryptedFile("pic.png.gpg", passphrase=getpass.getpass(),
